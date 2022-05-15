@@ -15,6 +15,11 @@ class WcaoUtils {
     await EasyLoading.show(status: msg ?? "loading...");
   }
 
+  /// 关闭loading
+  static dismiss() {
+    EasyLoading.dismiss();
+  }
+
   /// https://pub.flutter-io.cn/packages/cached_network_image
   /// 缓存图片
   static Widget imageCache(String url, {BoxFit? fit}) {
