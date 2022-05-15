@@ -5,8 +5,14 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_wcao/ui/theme.dart';
 
 class WcaoUtils {
+  /// toast
   static toast(String msg) async {
     await EasyLoading.showToast(msg);
+  }
+
+  /// loading
+  static loading(String? msg) async {
+    await EasyLoading.show(status: msg ?? "loading...");
   }
 
   /// https://pub.flutter-io.cn/packages/cached_network_image
