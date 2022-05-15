@@ -11,7 +11,7 @@ class WcaoUtils {
   }
 
   /// loading
-  static loading(String? msg) async {
+  static loading({String? msg}) async {
     await EasyLoading.show(status: msg ?? "loading...");
   }
 
