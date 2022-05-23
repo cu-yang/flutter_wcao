@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 /// ```
 
 class WcaoTheme {
-  /// 主色
+  /// 主题色
   static Color primary = const Color(0xff937DFF);
 
   /// 聚焦
@@ -31,14 +31,17 @@ class WcaoTheme {
   /// radius
   static BorderRadius radius = BorderRadius.circular(8);
 
+  ///  fontSize 最小文字
+  static double fsXs = 10;
+
+  /// fontSize sm 次要文字
+  static double fsSm = 12;
+
   /// fontSize base
   static double fsBase = 14;
 
   /// fontSize l 小标题
   static double fsL = 16;
-
-  /// fontSize sm 次要文字
-  static double fsSm = 12;
 
   /// fontSize xl 标题
   static double fsXl = 18;
