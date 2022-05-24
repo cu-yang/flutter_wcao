@@ -1,3 +1,7 @@
+### 0.0.3+2
+
+- [ui/tag] 新增参数: border、close、onClose
+
 ### 0.0.3+1
 
 - [WcaoUtils] add loading
