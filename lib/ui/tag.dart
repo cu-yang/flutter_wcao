@@ -11,6 +11,9 @@ class Tag extends StatelessWidget {
     this.borderRadius,
     this.fontSize,
     this.fontWeight,
+    this.close = false,
+    this.onClose,
+    this.border,
   }) : super(key: key);
 
   /// 文本
@@ -35,6 +38,15 @@ class Tag extends StatelessWidget {
   /// fontWeight
   final FontWeight? fontWeight;
 
+  /// 关闭按钮
+  final bool close;
+
+  /// 关闭回调
+  final VoidCallback? onClose;
+
+  /// 边框
+  final Border? border;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,14 +58,33 @@ class Tag extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor ?? color?.withOpacity(.25),
         borderRadius: borderRadius ?? BorderRadius.circular(0),
+        border: border,
       ),
-      child: Text(
-        text,
-        style: TextStyle(
-          fontSize: fontSize ?? WcaoTheme.fsSm,
-          color: color,
-          fontWeight: fontWeight,
-        ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            text,
+            style: TextStyle(
+              fontSize: fontSize ?? WcaoTheme.fsSm,
+              color: color,
+              fontWeight: fontWeight,
+            ),
+          ),
+          close
+              ? InkWell(
+                  onTap: onClose,
+                  child: Container(
+                    margin: const EdgeInsets.only(left: 2),
+                    child: Icon(
+                      Icons.close,
+                      color: color,
+                      size: WcaoTheme.fsBase,
+                    ),
+                  ),
+                )
+              : Container(),
+        ],
       ),
     );
   }
